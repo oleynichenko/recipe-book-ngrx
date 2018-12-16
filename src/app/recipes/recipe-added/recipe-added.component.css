@@ -1,0 +1,13 @@
+.recipe-added__btns {
+  margin-bottom: 36px;
+}
+
+.recipe-added__ingredient {
+  margin-bottom: 12px;
+}
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
