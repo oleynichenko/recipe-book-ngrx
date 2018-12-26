@@ -1,11 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {StoreModule} from '@ngrx/store';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import {AppRoutingModule} from './app-routing.module';
-import {CoreModule} from './core/core.module';
-import {StoreModule} from '@ngrx/store';
-import {shReducers} from './shopping-list/store/shopping-list.reducers';
+import { AppRoutingModule } from './app-routing.module';
+import { CoreModule } from './core/core.module';
+import { reducers } from './store/app.reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { AuthEffects } from './auth/store/auth.effects';
+import {StoreRouterConnectingModule} from '@ngrx/router-store';
+import {environment} from '../environments/environment';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -13,10 +19,15 @@ import {shReducers} from './shopping-list/store/shopping-list.reducers';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     CoreModule,
-    StoreModule.forRoot({sh: shReducers})
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([AuthEffects]),
+    StoreRouterConnectingModule,
+    !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
