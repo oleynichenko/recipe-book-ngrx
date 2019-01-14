@@ -1,4 +1,20 @@
 .recipe-detail__description {
   margin-bottom: 16px;
-  margin-top: 16px;
+  margin-top: 24px;
+}
+
+.recipe-detail__caret {
+  margin-left: 6px;
+}
+
+.recipe-detail__img {
+  margin-bottom: 16px;
+}
+
+.recipe-detail__title {
+  margin-bottom: 8px;
+}
+
+.recipe-detail__btn {
+  letter-spacing: 1px;
 }

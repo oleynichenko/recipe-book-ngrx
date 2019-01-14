@@ -13,6 +13,7 @@ import * as fromRecipe from '../store/recipe.reducers';
 
 export class RecipeListComponent implements OnInit {
   recipeState: Observable<fromRecipe.State>;
+
   constructor(private router: Router,
               private route: ActivatedRoute,
               private store: Store<fromRecipe.FeatureState>) { }

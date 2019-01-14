@@ -1,3 +1,11 @@
 .recipe-item {
   margin-bottom: 16px;
 }
+
+.recipe-item__desc {
+  max-width: 70%;
+}
+
+.recipe-item__img {
+  max-height: 50px;
+}

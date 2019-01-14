@@ -26,7 +26,7 @@ const initialState: State = {
     new Recipe(
       'Sugar Potato',
       'Cinnamon sugar sweet potato fries with caramel dipping sauce',
-      'https://cdn.bluefoot.com/starvin/images/Sweet-Potato-Fries/sweet-potato-caramel-drizzle.png',
+      'https://www.thekitchenwhisperer.net/wp-content/uploads/2017/06/Candied-Sweet-Potato-Wedges2-1200x800.jpg',
       [
         new Ingredient('Salt', 2),
         new Ingredient('Potatoes', 1),

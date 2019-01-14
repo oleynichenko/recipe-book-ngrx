@@ -9,11 +9,13 @@ import * as fromRecipeActions from '../../recipes/store/recipe.actions';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html'
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
 
 export class HeaderComponent implements OnInit {
   authState: Observable<fromAuth.State>;
+  isCollapsed = true;
 
   constructor(private store: Store<fromRecipe.FeatureState>) {}
 
@@ -23,13 +25,20 @@ export class HeaderComponent implements OnInit {
 
   onSaveData() {
     this.store.dispatch(new fromRecipeActions.StoreRecipes());
+    this.closeMenu();
   }
 
   onFetchData() {
     this.store.dispatch(new fromRecipeActions.FetchRecipes());
+    this.closeMenu();
   }
 
   onLogout() {
     this.store.dispatch(new authAction.Logout());
+    this.closeMenu();
+  }
+
+  closeMenu() {
+    this.isCollapsed = true;
   }
 }

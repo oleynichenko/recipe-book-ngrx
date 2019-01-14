@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {CollapseModule} from 'ngx-bootstrap';
 
 import {HeaderComponent} from './header/header.component';
 import {HomeComponent} from './home/home.component';
@@ -18,7 +19,8 @@ import {LoggingInterceptor} from '../shared/logging.interсeptor';
     AppRoutingModule,
     CommonModule,
     AuthModule,
-    ShoppingListModule
+    ShoppingListModule,
+    CollapseModule.forRoot(),
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},

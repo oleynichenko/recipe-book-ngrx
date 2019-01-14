@@ -11,3 +11,14 @@ textarea.ng-invalid.ng-touched {
   border: 1px solid red;
 }
 
+.home__btn {
+  letter-spacing: 1px;
+}
+
+.recipe-added__description {
+  margin-bottom: 16px;
+}
+
+.recipe-added__img {
+  margin-bottom: 32px;
+}
